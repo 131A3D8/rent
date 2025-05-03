@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stars.mapper.RentingMapper" >
+    <delete id="deleteRenting">
+        delete from renting where rentingname=#{rentingname}
+    </delete>
+
+    <select id="getAllRenting" resultType="com.stars.model.Renting">
+        select * from renting
+    </select>
+    <insert id="insertRenting">
+        insert into renting(rentingname,rent,address,phone,distance) values(#{rentingname},#{rent},#{address},#{phone},#{distance})
+    </insert>
+</mapper>
