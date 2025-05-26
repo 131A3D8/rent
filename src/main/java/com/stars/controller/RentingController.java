@@ -11,16 +11,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/renting")
+@CrossOrigin(origins = "*")
 public class RentingController {
     @Autowired
     private IRentingService rentingService;
 
     @GetMapping("/All")
+    @CrossOrigin(origins = "*")
     public List<Renting> getAllRenting(){
         return rentingService.getAllRenting();
     }
     //添加数据
     @PostMapping("/Add")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<String> addRenting(@RequestBody Renting renting) {
         try {
             int result = rentingService.addRenting(renting);
@@ -34,6 +37,7 @@ public class RentingController {
         }
     }
     @DeleteMapping("/delete/{rentingname}")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<String> deleteRenting(@PathVariable("rentingname") String rentingname){
         if (rentingname == null || rentingname.trim().isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("请求参数无效");

@@ -1,22 +1,22 @@
 package com.stars.controller;
 
 import com.stars.model.LoginDTO;
+import com.stars.model.User;
 import com.stars.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
     private IUserService userService;
     @PostMapping("/add")
-    public String addUser(){
+    @CrossOrigin(origins = "*")
+    public String addUser(@RequestBody User user){
         try{
-            int result = userService.addUser();
+            int result = userService.addUser(user);
             if(result > 0){
                 return "添加成功";
             }else{
@@ -28,6 +28,7 @@ public class UserController {
         }
     }
     @PostMapping("/select")
+    @CrossOrigin(origins = "*")
     public String SelectUser(@RequestBody String username){
         try{
             System.out.println(username);
@@ -44,6 +45,7 @@ public class UserController {
         }
     }
     @PostMapping("/login")
+    @CrossOrigin(origins = "*")
     public String LoginUser(@RequestBody LoginDTO loginDTO) {
         try {
             String result = userService.LoginUser(loginDTO.getUsername(), loginDTO.getPassword());

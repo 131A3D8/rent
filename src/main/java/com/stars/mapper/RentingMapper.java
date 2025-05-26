@@ -8,9 +8,9 @@ import java.util.List;
 
 @Mapper
 public interface RentingMapper  {
-    List<Renting> getAllRenting();
+    List<Renting> getAllRenting();//查询所有
 
-    int insertRenting(Renting renting);
+    int insertRenting(Renting renting);//添加
 
-    int deleteRenting(String rentingname);
+    int deleteRenting(String rentingname);//删除
 }

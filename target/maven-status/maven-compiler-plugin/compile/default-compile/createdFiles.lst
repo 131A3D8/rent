@@ -1,0 +1,15 @@
+com\stars\model\User.class
+com\stars\model\Result.class
+com\RentingApplication.class
+com\stars\controller\RentingController.class
+com\UserApplication.class
+com\stars\controller\UserController.class
+com\stars\model\talk.class
+com\stars\service\IRentingService.class
+com\stars\service\IUserService.class
+com\stars\model\LoginDTO.class
+com\stars\mapper\UserMapper.class
+com\stars\model\Renting.class
+com\stars\service\impl\RentingServiceImpl.class
+com\stars\mapper\RentingMapper.class
+com\stars\service\impl\UserServiceImpl.class

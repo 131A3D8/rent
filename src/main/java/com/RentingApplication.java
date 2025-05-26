@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@MapperScan("com.stars.mapper")
+@MapperScan("com.stars.mapper") // 扫描 Mapper 接口
 public class RentingApplication {
 
     public static void main(String[] args) {

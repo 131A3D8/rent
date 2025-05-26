@@ -1,6 +1,7 @@
 package com.stars.service.impl;
 
 import com.stars.mapper.UserMapper;
+import com.stars.model.User;
 import com.stars.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +13,9 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public int addUser()
+    public int addUser(User user)
     {
-        return userMapper.addUser();
+        return userMapper.addUser(user);
     }
     @Override
     public String LoginUser(String username, String password)
